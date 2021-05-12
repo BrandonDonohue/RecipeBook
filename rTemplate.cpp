@@ -1,18 +1,25 @@
 #include "rTemplate.h"
 
+wxBEGIN_EVENT_TABLE(rTemplate, wxFrame)
+	EVT_BUTTON(1001, SaveButtonClicked)
+wxEND_EVENT_TABLE()
+
 rTemplate::rTemplate() : wxFrame(nullptr, wxID_ANY, "New Recipe", wxPoint(30, 30), wxSize(1500, 1000)) {
-	wxBoxSizer* grid = new wxBoxSizer(wxHORIZONTAL);
-	wxBoxSizer* topLeftGrid = new wxBoxSizer(wxHORIZONTAL);
-	wxBoxSizer* LColumn = new wxBoxSizer(wxVERTICAL);
-	wxBoxSizer* rColumn = new wxBoxSizer(wxVERTICAL);
+	grid = new wxBoxSizer(wxHORIZONTAL);
+	topLeftGrid = new wxBoxSizer(wxHORIZONTAL);
+	LColumn = new wxBoxSizer(wxVERTICAL);
+	rColumn = new wxBoxSizer(wxVERTICAL);
 
-	wxTextCtrl* rName = new wxTextCtrl(this, wxID_ANY, "Recipe Name", wxDefaultPosition, wxSize(300, 150));
+	
+	rName = new wxTextCtrl(this, wxID_ANY, "", wxDefaultPosition, wxSize(300, 150));
+	//rName->SetFont(wxFont(16, wxFONTFAMILY_DECORATIVE, wxFONTSIZE_LARGE, wxFONTWEIGHT_BOLD));
+	
 
-	wxButton* btnSave = new wxButton(this, wxID_ANY, "Save Recipe", wxDefaultPosition, wxSize(190, 150));
-	wxListBox* ingredients = new wxListBox(this, wxID_ANY, wxDefaultPosition, wxSize(500, 790));
+	btnSave = new wxButton(this, 1001, "Save Recipe", wxDefaultPosition, wxSize(190, 150));
+	ingredients = new wxListBox(this, wxID_ANY, wxDefaultPosition, wxSize(500, 790));
 
 	//wxStaticBitmap* image = new wxStaticBitmap();
-	wxTextCtrl* instructions = new wxTextCtrl(this, wxID_ANY, "Cooking Instructions");
+	instructions = new wxTextCtrl(this, wxID_ANY, "Cooking Instructions");
 	
 	topLeftGrid->Add(rName);
 	topLeftGrid->Add(10, 0, 0);
@@ -34,4 +41,17 @@ rTemplate::rTemplate() : wxFrame(nullptr, wxID_ANY, "New Recipe", wxPoint(30, 30
 
 rTemplate::~rTemplate() {
 
+}
+
+void rTemplate::SaveButtonClicked(wxCommandEvent& evnt) {
+	/*
+	std::ofstream ofs;
+	ofs.open("Recipes.txt");
+
+	ofs << "N\n";
+	ofs.close();
+	*/
+	rName->SaveFile("Recipes.txt");
+
+	evnt.Skip();
 }
