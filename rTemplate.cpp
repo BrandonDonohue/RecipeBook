@@ -44,14 +44,12 @@ rTemplate::~rTemplate() {
 }
 
 void rTemplate::SaveButtonClicked(wxCommandEvent& evnt) {
-	/*
+	
 	std::ofstream ofs;
 	ofs.open("Recipes.txt");
 
-	ofs << "N\n";
+	ofs << "n:" << rName->GetValue();
 	ofs.close();
-	*/
-	rName->SaveFile("Recipes.txt");
 
 	evnt.Skip();
 }

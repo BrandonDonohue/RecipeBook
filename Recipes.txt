@@ -1,1 +1,12 @@
+-R
+:n
 Panna Cotta
+:ing
+milk
+cream
+vanilla
+sugar
+gelatine
+:ins
+bring milk, cream, sugar and vanilla to a light simmer. mix in gelatine and pour into molds. chill to set.
+-S
