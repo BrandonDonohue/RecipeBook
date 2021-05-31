@@ -1,12 +1,24 @@
--R
 :n
 Panna Cotta
 :ing
-milk
 cream
-vanilla
+milk
 sugar
+honey
+vanilla pod
 gelatine
 :ins
-bring milk, cream, sugar and vanilla to a light simmer. mix in gelatine and pour into molds. chill to set.
--S
+heat everything. then add gelatine and chill to set.
+:n
+Panna Cotta
+:ing
+ingredients
+:ins
+heres the instructions
+:n
+Panna Cotta
+:ing
+try these
+not these
+:ins
+you know what to do
